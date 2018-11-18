@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="jumbotron jumbotron">
+    <div class="container">
+     <div id="hourlogo" href="https://imgbb.com/"><img src="https://image.ibb.co/gLQ7aL/24hourlogo.png" alt="24hourlogo" border="0"></div><div id="burgerlogo" href="https://imgbb.com/"><img src="https://image.ibb.co/iWpB20/burger.png" alt="burger" border="0"></div>
+      <h1 class="display-6 text-left">24 hour Burger!</h1> 
+      <p class="lead text-center">
+        <h4>A magical tavern that tapped into the internet via a mystical portal. <br>
+          Any burger can be created and enjoyed!</h4>
+      </p>
+    </div>
+  </div>
+  <div class="py-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 sub-heading">
+          <div class="mb-5" href="/"><h2>Order Up!</h2></div>
+          <ul id="orderId" class="burger-list">
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-block devoured=true}}
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+
+        <div class="mb-8 devoured" href="/"><h2>Devoured!</h2><br>
+
+        <ul id="devouredId" class="burger-list">
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burgers/burger-block devoured=false}}
+          {{/if}}
+          {{/each}}
+        </ul>
+        </div>
+
+      </div>
+    </div>
+</div>
+</div>
+<div id="order" class="py-5">
+  <div id="formId" class="container">
+    <h1 class="sub-lead text-center">Order Here!</h1>
+    <div class="row">
+      <div class="col-sm-12 d-inline-flex p-2 bd-highlight justify-content-center">
+        <form  id ="formId" class="create-form  justify-content-center">
+          <div class="form-group ">
+            <input id="burger" class="form-control form-control-lg mb-6" type="text" placeholder="Enter Burger Name!">
+          </div>
+          <button type="submit" class="burger-form btn btn-outline-light">Magic Button</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
